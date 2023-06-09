@@ -1,31 +1,26 @@
 <%- include("../header"); %>
 <div class="col-12">
-    <h1>Agregar producto</h1>
+    <h1>Agregar usuario</h1>
     <form method="post" action="/usuarios/insertar">
         <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input required id="nombre" placeholder="Nombre del producto" class="form-control" type="text"
+            <input required id="nombre" placeholder="Nombre del usuario" class="form-control" type="text"
                 name="nombre">
         </div>
         <div class="form-group">
-            <label for="precio">Precio</label>
-            <input required id="precio" placeholder="Precio del producto" class="form-control" type="number"
-                name="precio">
-        </div>
-        <div class="form-group">
             <label for="email">Email</label>
-            <input required id="email" placeholder="Email del producto" class="form-control" type="email"
+            <input required id="email" placeholder="Email del usuario" class="form-control" type="email"
                 name="email">
         </div>
         <div class="form-group">
             <label for="genero">Genero</label>
-            <input requires id="genero" placeholder="Genero del producto" class="form-control" type="text"
+            <input requires id="genero" placeholder="Genero del usuario" class="form-control" type="text"
                 name="genero">
         </div>
         <div class="form-group">
-            <label for="password">Password</label>
-            <input required id="password" placeholder="Password del producto" class="form-control" type="password"
-                name="password">
+            <label for="contraseña">contraseña</label>
+            <input required id="contraseña" placeholder="contraseña del usuario" class="form-control" type="contraseña"
+                name="contraseña">
         </div>
         <div class="form-group">
             <button class="btn btn-success">Guardar</button>
