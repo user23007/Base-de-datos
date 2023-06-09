@@ -1,0 +1,38 @@
+<%- include('partials/_header') %>
+
+<div class="container">
+    <div class="row mt-5">
+        <table class="table table-bordered table-hover">
+                <tr><th>Nombre del Curso</th>
+                    <td><%= datos[0].nombre %></td>
+                </tr>
+                <tr><th>Categoría</th>
+                    <td><%= datos[0].categoría %></td>
+                </tr>
+                <tr><th>Fecha de inicio</th>
+                    <td><%= datos[0].fecha_inicio %></td>
+                </tr>
+                <tr><th>Fecha fin</th>
+                    <td><%= datos[0].fecha_fin %></td>
+                </tr>
+                <tr><th>Estudiantes</th>
+                    <td><a href="/getEstudiantes/<%= datos[0].idcurso %>" class="btn btn-info">Ver Lista de Estudiantes</a></td>
+                </tr>
+                <tr><th>Profesor</th>
+                    <td><%= profesor[0].nombre %></td>
+                    <td><a href="/getDetallesProfesor/<%= datos[0].idcurso %>" class="btn btn-primary">Ver Información</a></td>
+                </tr>
+                <tr><th>Materiales</th>
+                    <td><a href="/getMateriales/<%= datos[0].idcurso %>" class="btn btn-info">Ver Materiales</a></td>
+                </tr>
+                <tr><th>Tareas</th>
+                    <td><a href="/getTareas/<%= datos[0].idcurso %>" class="btn btn-info">Ver Tareas</a></td>
+                </tr>
+                <tr><th>Foros</th>
+                    <td><a href="/getForos/<%= datos[0].idcurso %>" class="btn btn-info">Ver Foros</a></td>
+                </tr>
+        </table>
+    </div>
+</div>
+
+<%- include('partials/_footer') %>

@@ -1,0 +1,57 @@
+<%- include('partials/_header') %>
+
+<div class="container">
+    <div class="row mt-5">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Id Material</th>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% datos.forEach(material => { %>
+                    <tr>
+                        <td><%= material.idmaterial %></td>
+                        <td><%= material.titulo %></td>
+                        <td><%= material.descripcion %></td>
+                        <td>
+                            <a href="/deleteMaterial/<%= material.idmaterial %>/<%= material.idcurso %>" class="btn btn-danger">Eliminar Material</a>
+                            <a href="/updateMaterial/<%= material.idmaterial %>" class="btn btn-info">Editar Material</a>
+                        </td>
+                    </tr>
+                <% })%>
+            </tbody>
+        </table>
+        <div class="row mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/addMaterial" method="post">
+                        <div class="form-group">
+                            <h2>Agregar Material al Curso</h2>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="idmaterial" placeholder="Id del Material" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="titulo" placeholder="Título del Material" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="descripcion" placeholder="Descripción del Material" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="idcurso" placeholder="Id del Curso" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Agregar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/_footer') %>

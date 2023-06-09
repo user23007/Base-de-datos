@@ -1,0 +1,35 @@
+<%- include('partials/_header') %>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/updateForo/<%= datos.idforo %>/<%= datos.idcurso %>" method="post">
+                        <div class="form-group">
+                            <h2>Editar Foro</h2>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="nombre" value="<%= datos.nombre %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="descripcion" value="<%= datos.descripcion %>"  class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="fecha_comienzo"  value="<%= datos.fecha_comienzo %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="fecha_final" value="<%= datos.fecha_final %>" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Editar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('partials/_footer') %>

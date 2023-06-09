@@ -1,0 +1,28 @@
+<%- include('partials/_header') %>
+
+<div class="container">
+    <div class="row mt-5">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre del Curso</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(curso => { %>
+                    <tr>
+                        <td><%= curso.nombre %></td>
+                        <td><%= curso.categoría %></td>
+                        <td>
+                            <a href="/getDetalles/<%= curso.idcurso %>" class="btn btn-primary">Ver detalles</a>
+                        </td>
+                    </tr>
+                    <% })%>    
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%- include('partials/_footer') %>

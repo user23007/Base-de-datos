@@ -1,0 +1,62 @@
+<%- include('partials/_header') %>
+
+<div class="container">
+    <div class="row mt-5">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Fecha de Creación</th>
+                    <th>Fecha de Entrega</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% datos.forEach(tarea => { %>
+                    <tr>
+                        <td><%= tarea.nombre %></td>
+                        <td><%= tarea.descripcion %></td>
+                        <td><%= tarea.fecha_creacion %></td>
+                        <td><%= tarea.fecha_entrega %></td>
+                        <td>
+                            <a href="/deleteTarea/<%= tarea.idtarea %>/<%= tarea.idcurso %>" class="btn btn-danger">Eliminar Tarea</a>
+                            <a href="/updateTarea/<%= tarea.idtarea %>" class="btn btn-info">Editar Tarea</a>
+                        </td>
+                    </tr>
+                <% })%>
+            </tbody>
+        </table>
+        <div class="row mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/addTarea" method="post">
+                        <div class="form-group">
+                            <h2>Agregar Tarea al Curso</h2>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="idtarea" placeholder="Id de la Tarea" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="nombre" placeholder="Nombre de la Tarea" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="fecha_creacion" placeholder="Fecha de Creación" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="fecha_entrega" placeholder="Fecha de Entrega" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="idcurso" placeholder="Id del Curso" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Agregar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/_footer') %>

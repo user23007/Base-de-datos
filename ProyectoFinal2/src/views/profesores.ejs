@@ -1,0 +1,22 @@
+<%- include('partials/_header') %>
+
+<div class="container">
+    <div class="row mt-5">
+        <table class="table table-bordered table-hover">
+                <tr><th>Nombre Profesor</th>
+                    <td><%= datos[0].nombre %></td>
+                </tr>
+                <tr><th>Email</th>
+                    <td><%= datos[0].email %></td>
+                </tr>
+                <tr><th>Teléfono</th>
+                    <td><%= datos[0].telefono %></td>
+                </tr>
+                <tr><th>Area de estudio</th>
+                    <td><%= datos[0].area_principal %></td>
+                </tr>
+        </table>
+    </div>
+</div>
+
+<%- include('partials/_footer') %>

@@ -1,0 +1,67 @@
+<%- include('partials/_header') %>
+
+<div class="container">
+    <div class="row mt-5">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Id Foro</th>
+                    <th>Nombre del Foro</th>
+                    <th>Descripción</th>
+                    <th>Fecha de Inicio</th>
+                    <th>Fecha Final</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% datos.forEach(foro => { %>
+                    <tr>
+                        <td><%= foro.idforo %></td>
+                        <td><%= foro.nombre %></td>
+                        <td><%= foro.descripcion %></td>
+                        <td><%= foro.fecha_comienzo %></td>
+                        <td><%= foro.fecha_final %></td>
+                        <td>
+                            <a href="/deleteForo/<%= foro.idforo %>/<%= foro.idcurso %>" class="btn btn-danger">Eliminar Foro</a>
+                            <a href="/updateForo/<%= foro.idforo %>" class="btn btn-info">Editar Foro</a>
+                        </td>
+                    </tr>
+                <% })%>
+            </tbody>
+        </table>
+        <div class="row mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/addForo" method="post">
+                        <div class="form-group">
+                            <h2>Crear Nuevo Foro</h2>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="idforo" placeholder="Id del Foro" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="nombre" placeholder="Nombre del Foro" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="descripcion" placeholder="Descripción" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="fecha_comienzo" placeholder="Fecha Comienzo" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="fecha_final" placeholder="Fecha Final" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="idcurso" placeholder="Id del Curso" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Crear
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/_footer') %>

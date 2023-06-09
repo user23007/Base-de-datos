@@ -1,0 +1,35 @@
+<%- include('partials/_header') %>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/updateMaterial/<%= datos.idmaterial %>/<%= datos.idcurso %>" method="post">
+                        <div class="form-group">
+                            <h2>Editar Material</h2>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="idmaterial" value="<%= datos.idmaterial %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="titulo" value="<%= datos.titulo %>"  class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="descripcion"  value="<%= datos.descripcion %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="idcurso" value="<%= datos.idcurso %>" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Editar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('partials/_footer') %>
