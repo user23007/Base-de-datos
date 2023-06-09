@@ -10,7 +10,7 @@ create table usuarios(
     email varchar(100),
     genero varchar(30),
     contraseña varchar(200),
-    primary key(id)
+    primary key(id_usuario)
 );
 
 create user "dbuser"@"%" identified with mysql_native_password BY "Eafit2023.";
