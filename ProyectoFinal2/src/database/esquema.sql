@@ -62,7 +62,7 @@ create table foro(
     FOREIGN KEY (idcurso) REFERENCES curso(idcurso)
 );
 
-create user "root"@"%" identified with mysql_native_password BY "Melia1020105443+";
+create user "dbuser"@"%" identified with mysql_native_password BY "Eafit2023.";
 grant all privileges on project.* to "root"@"%";
 flush privileges;
 
