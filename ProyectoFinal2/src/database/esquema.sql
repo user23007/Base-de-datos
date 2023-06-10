@@ -31,7 +31,6 @@ CREATE TABLE profesor(
     FOREIGN KEY (idcurso) REFERENCES curso(idcurso),
     UNIQUE (idcurso)
 ); 
-drop table profesor;
   
 
 create table material(
@@ -63,7 +62,7 @@ create table foro(
 );
 
 create user "dbuser"@"%" identified with mysql_native_password BY "Eafit2023.";
-grant all privileges on project.* to "root"@"%";
+grant all privileges on project.* to "dbuser"@"%";
 flush privileges;
 
 
