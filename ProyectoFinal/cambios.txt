@@ -1,2 +1,0 @@
-hay que modificar el "conextion.js"
-en app.js hay que crear los routes de cada cosa
