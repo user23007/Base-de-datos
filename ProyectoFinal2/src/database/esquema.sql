@@ -1,4 +1,6 @@
 --creating database
+mysql -u root -p
+
 CREATE DATABASE project;
 
 use project;
@@ -59,6 +61,18 @@ create table foro(
     idcurso int,
     FOREIGN KEY (idcurso) REFERENCES curso(idcurso)
 );
+
+create user "root"@"%" identified with mysql_native_password BY "Melia1020105443+";
+grant all privileges on project.* to "root"@"%";
+flush privileges;
+
+
+insert into curso values(1,"Seminario de Ingeniería", "Ingeniería de Sistemas",'2023-08-01', '2023-12-31');
+insert into estudiante values(100056,"Ana Sofia Rodriguez Orozco", "asrodriguo@eafit.edu.co",1);
+insert into profesor values("123456", "Edwin Montoya", "edwimm@eafit.edu.co", 3, "Bases de Datos", 1);
+insert into material values(14, "Las empresas hoy en día", "Lean este material para la próxima clase",1);
+insert into tarea values(1,"Tarea 1","Buscar qué ingenierías son más populares hoy en día y por qué", '2023-02-14','2023-02-20',1);
+insert into foro values(1, "Conozcámonos", "Conocer mejor a los compañeros de clase",'2023-02-14','2023-02-20',1);
 
 
 
